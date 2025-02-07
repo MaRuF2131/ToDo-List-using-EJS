@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Todo App</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<!--      <%if(kindOfDay==="Saturday" || kindOfDay==="Friday"){%>
+        <h1 style="color:red;"><%=kindOfDay%> ToDo list </h1>
+     <%}else{%>
+        <h1 style="color: blue;"><%=kindOfDay%> ToDo list </h1>
+     <%}%> -->
+     <h1 style="color:red;"><%=kindOfDay%> ToDo list </h1>
+
+     <ul id="todo-list">
+        <li>Buy food</li>
+        <li>Cooking</li>
+        <li><%=newListItem%></li>
+     </ul>
+    <div id="app">
+        <form id="todo-form" action="/" method="POST">
+            <input type="text" id="new-todo" name="todo" placeholder="Enter a new todo">
+            <button type="submit" value="add" name="button">Add Todo</button>
+        </form>
+    </div>
+</body>
+</html>
