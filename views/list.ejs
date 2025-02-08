@@ -4,11 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Todo App</title>
-    <link rel="stylesheet" href="./css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.23/dist/full.min.css" rel="stylesheet" type="text/css" /> 
+    <script src="https://cdn.tailwindcss.com"></script> 
 </head>
 <body>
+   <%- include('header') -%>
+   <head>
+    <link rel="stylesheet" href="./css/style.css">
+   </head>
      <div class="box" id="heading">
-        <h1 style="color:red;"><%=title%></h1>
+        <h1><%=title%></h1>
      </div>
      
      <div class="box">

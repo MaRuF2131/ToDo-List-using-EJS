@@ -9,7 +9,6 @@ const port = process.env.PORT || 3000;
 let day="";
 let today = new Date(); 
   const customOptions = { weekday: "long", month: "short", day: "2-digit", year: "numeric" };
-  day=today.toLocaleDateString("en-US", customOptions);  // Example: "Friday, Feb 07, 2025"
 let items = [];
 let workItems = [];
 
@@ -36,6 +35,7 @@ const stringCleaner = (req,res,next) => {  //this special middleware is to clean
 }); */
 
 app.get('/', (req, res) => {
+    day=today.toLocaleDateString("en-US", customOptions);  // Example: "Friday, Feb 07, 2025"
     res.render("list.ejs", {title:day , newListItem:items});
 });
 

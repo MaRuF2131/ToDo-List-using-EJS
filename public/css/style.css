@@ -4,8 +4,10 @@ html {
     min-height: 1000px;
     font-family: 'helvetica neue';
   }
+
   
   h1 {
+    font-size: 32px;
     color: #fff;
     padding: 10px;
   }
@@ -57,7 +59,10 @@ html {
   }
   
   button {
-    min-height: 50px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
     width: 50px;
     border-radius: 50%;
     border-color: transparent;
@@ -66,7 +71,6 @@ html {
     font-size: 30px;
     padding: 6px;
     border-width: 0;
-    text-align: center;
   }
   
   @-webkit-keyframes hvr-back-pulse {
