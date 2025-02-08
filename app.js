@@ -55,7 +55,7 @@ app.post('/', stringCleaner, (req, res) => {
       if(req.body.todo!=='') workItems.push(req.body.todo);
       res.redirect("/work");
   }else{
-      if(req.body.todo!=='') workItems.push(req.body.todo);
+      if(req.body.todo!=='') items.push(req.body.todo);
        res.redirect("/");
        /*   res.render("list.ejs", {kindOfDay:day , newListItem:items}); */
   }
