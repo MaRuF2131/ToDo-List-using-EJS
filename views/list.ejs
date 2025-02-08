@@ -4,26 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Todo App</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
-<!--      <%if(kindOfDay==="Saturday" || kindOfDay==="Friday"){%>
-        <h1 style="color:red;"><%=kindOfDay%> ToDo list </h1>
-     <%}else{%>
-        <h1 style="color: blue;"><%=kindOfDay%> ToDo list </h1>
-     <%}%> -->
-     <h1 style="color:red;"><%=kindOfDay%> <br> ToDo-list </h1>
+     <div class="box" id="heading">
+        <h1 style="color:red;"><%=title%></h1>
+     </div>
+     
+     <div class="box">
+            <% newListItem.forEach((todo) => {%>
+                <div class="item">
+                    <input type="checkbox" name="checkbox" id="">
+                    <p><%=todo%></p>
+                </div>
+            <%})%>
 
-     <ul id="todo-list">
-        <% newListItem.forEach((todo) => {%>
-            <li><%=todo%></li>
-        <%})%>
-     </ul>
-    <div id="app">
-        <form id="todo-form" action="/" method="POST">
-            <input type="text" id="new-todo" name="todo" placeholder="Enter a new todo">
-            <button type="submit" value="add" name="button">Add Todo</button>
-        </form>
-    </div>
+            <form  action="/" method="POST" class="item">
+                <input type="text"  name="todo" placeholder="New Item" autocomplete="off">
+                <button type="submit" value="<%=title%>" name="list">+</button>
+            </form>
+     </div>
+
 </body>
 </html>
