@@ -6,16 +6,20 @@ app.use(bodyParser.urlencoded({ extended: true }));
 const port = process.env.PORT || 3000;
 var item="";
 var day="";
-app.get('/', (req, res) => {
-  var today = new Date(); 
+var today = new Date(); 
   const customOptions = { weekday: "long", month: "short", day: "2-digit", year: "numeric" };
   day=today.toLocaleDateString("en-US", customOptions);  // Example: "Friday, Feb 07, 2025"
-  res.render("list.ejs", {kindOfDay:day , newListItem:item});
+let items = ["Buy Food", "Cook Food", "Eat Food"];
+
+app.get('/', (req, res) => {
+  res.render("list.ejs", {kindOfDay:day , newListItem:items});
 });
 
 app.post('/', (req, res) => {
-  item=req.body.todo;
-  res.render("list.ejs", {kindOfDay:day , newListItem:item});
+  if(!(items.some((element) => element === req.body.todo))){
+     items.push(req.body.todo);
+  }
+  res.render("list.ejs", {kindOfDay:day , newListItem:items});
 });
 
 app.listen(port, () => {

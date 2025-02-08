@@ -12,12 +12,12 @@
      <%}else{%>
         <h1 style="color: blue;"><%=kindOfDay%> ToDo list </h1>
      <%}%> -->
-     <h1 style="color:red;"><%=kindOfDay%> ToDo list </h1>
+     <h1 style="color:red;"><%=kindOfDay%> <br> ToDo-list </h1>
 
      <ul id="todo-list">
-        <li>Buy food</li>
-        <li>Cooking</li>
-        <li><%=newListItem%></li>
+        <% newListItem.forEach((todo) => {%>
+            <li><%=todo%></li>
+        <%})%>
      </ul>
     <div id="app">
         <form id="todo-form" action="/" method="POST">
