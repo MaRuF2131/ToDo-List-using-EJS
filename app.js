@@ -6,9 +6,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
 
 const port = process.env.PORT || 3000;
-var item="";
-var day="";
-var today = new Date(); 
+let day="";
+let today = new Date(); 
   const customOptions = { weekday: "long", month: "short", day: "2-digit", year: "numeric" };
   day=today.toLocaleDateString("en-US", customOptions);  // Example: "Friday, Feb 07, 2025"
 let items = [];
